@@ -147,10 +147,10 @@ export default function JobsPage() {
                                 </CardContent>
                             </Card>
                         ))}
-                         <Card className="bg-background border-none rounded-2xl p-8 text-center">
+                         <Card className="bg-foreground text-background border-none rounded-2xl p-8 text-center">
                             <h3 className="text-xl font-semibold mb-2">Initiativbewerbung</h3>
-                            <p className="text-muted-foreground mb-4">Ihre Traumstelle ist nicht dabei? Wir sind immer offen für talentierte Menschen. Überraschen Sie uns!</p>
-                            <Button asChild variant="outline">
+                            <p className="text-muted-foreground/80 mb-4">Ihre Traumstelle ist nicht dabei? Wir sind immer offen für talentierte Menschen. Überraschen Sie uns!</p>
+                            <Button asChild variant="secondary">
                                 <Link href="/kontakt">Jetzt initiativ bewerben</Link>
                             </Button>
                         </Card>
