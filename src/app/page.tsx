@@ -12,6 +12,10 @@ import {
   ClipboardCheck,
   ArrowRight,
   Clock,
+  Heart,
+  Users,
+  BrainCircuit,
+  Smartphone
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -59,26 +63,26 @@ const services = [
 const steps = [
   {
     step: 1,
-    title: '1. Ankommen & Zuhören',
+    title: 'Ankommen & Zuhören',
     description: 'Wir nehmen uns Zeit für Ihre Geschichte, Ihre Beschwerden und Ihre Ziele. Keine fünf-Minuten-Anamnese, sondern ein echtes Gespräch.',
   },
   {
     step: 2,
-    title: '2. Analyse & Befund',
+    title: 'Analyse & Befund',
     description: 'Wir testen Beweglichkeit, Kraft, Haltung und Alltagsbelastungen. Sie verstehen danach, woher Ihre Beschwerden kommen.',
   },
   {
     step: 3,
-    title: '3. Individuelle Therapie & Plan',
+    title: 'Individuelle Therapie & Plan',
     description: 'Gemeinsam legen wir Behandlungsziele, sinnvolle Termine und Übungen für zuhause fest – transparent und nachvollziehbar.',
   },
 ];
 
 const whyUs = [
-    { title: '45 Minuten pro Behandlung', description: 'Mehr Zeit bedeutet bessere Diagnostik, gezieltere Behandlung und Raum für Ihre Fragen.' },
-    { title: 'Ganzheitlicher Blick', description: 'Wir betrachten den ganzen Menschen – Bewegungsmuster, Alltag, Schlaf, Stress. Ohne esoterische Versprechen, dafür mit klarem Konzept.' },
-    { title: 'Interdisziplinär vernetzt', description: 'Enge Zusammenarbeit mit Ärzt:innen, Orthopäd:innen, Osteopath:innen und Trainer:innen im Raum Wiesbaden.' },
-    { title: 'Digitale Unterstützung', description: 'Übungsprogramme als App, Erinnerungen an Hausaufgaben und Video-Feedback bei Bedarf.' },
+    { icon: Clock, title: '45 Minuten pro Behandlung', description: 'Mehr Zeit bedeutet bessere Diagnostik, gezieltere Behandlung und Raum für Ihre Fragen.' },
+    { icon: BrainCircuit, title: 'Ganzheitlicher Blick', description: 'Wir betrachten den ganzen Menschen – Bewegungsmuster, Alltag, Schlaf, Stress. Mit klarem Konzept.' },
+    { icon: Users, title: 'Interdisziplinär vernetzt', description: 'Enge Zusammenarbeit mit Ärzt:innen, Orthopäd:innen, Osteopath:innen und Trainer:innen im Raum Wiesbaden.' },
+    { icon: Smartphone, title: 'Digitale Unterstützung', description: 'Übungsprogramme als App, Erinnerungen an Hausaufgaben und Video-Feedback bei Bedarf.' },
 ];
 
 const testimonials = [
@@ -114,7 +118,7 @@ export default function Home() {
             <div className="flex flex-col gap-8 text-center lg:text-left">
               
               <div className="flex justify-center lg:justify-start">
-                  <div className="inline-flex items-center gap-3 bg-white p-2 pr-4 rounded-full">
+                  <div className="inline-flex items-center gap-3 bg-white p-2 pr-4 rounded-full shadow-sm">
                       <div className="flex items-center">
                           {[...Array(5)].map((_, i) => (
                               <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
@@ -229,7 +233,7 @@ export default function Home() {
             {/* Desktop Timeline */}
             <div className="hidden md:grid grid-cols-3 gap-16 items-start">
               <div className="absolute top-6 left-0 w-full h-px bg-border" />
-              {steps.map((step, index) => (
+              {steps.map((step) => (
                 <div key={step.step} className="relative flex flex-col items-center text-center">
                   <div className="relative z-10 w-12 h-12 mb-6 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center font-bold text-xl ring-8 ring-background">{step.step}</div>
                   <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
@@ -251,7 +255,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-16">
-            <Button asChild size="lg" variant="link" className="text-lg text-primary underline">
+            <Button asChild size="lg" variant="link" className="text-lg text-primary hover:underline">
               <Link href="/kontakt">
                 Jetzt ersten Termin vereinbaren
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -266,17 +270,17 @@ export default function Home() {
           <div className="container mx-auto px-4">
               <div className="text-center max-w-3xl mx-auto mb-12">
                   <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Warum PhysioRhein?</h2>
+                  <p className="mt-4 text-lg text-muted-foreground">Vier gute Gründe für Ihre Gesundheit.</p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {whyUs.map((item, index) => (
-                      <Card key={index} className="border-0 shadow-none bg-transparent">
-                          <CardHeader>
-                            <CardTitle className="text-2xl font-bold text-primary">{item.title}</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            <p className="text-muted-foreground">{item.description}</p>
-                          </CardContent>
-                      </Card>
+                      <div key={index} className="flex flex-col items-center text-center p-6">
+                           <div className="bg-primary/10 p-4 rounded-full mb-4 text-primary">
+                                <item.icon className="w-8 h-8" />
+                            </div>
+                          <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                          <p className="text-muted-foreground">{item.description}</p>
+                      </div>
                   ))}
               </div>
           </div>
