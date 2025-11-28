@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { placeholderImages } from '@/lib/placeholder-images';
-import { Ear, BrainCircuit, Dumbbell } from 'lucide-react';
+import { Ear, BrainCircuit, Dumbbell, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const teamMembers = [
   {
@@ -137,6 +139,14 @@ export default function UeberUnsPage() {
                                 </p>
                             </div>
                         ))}
+                    </div>
+                    <div className="text-center mt-16">
+                        <Button asChild size="lg">
+                            <Link href="/kontakt">
+                                Jetzt Erstgespräch vereinbaren
+                                <ArrowRight className="ml-2 h-5 w-5" />
+                            </Link>
+                        </Button>
                     </div>
                 </div>
             </section>
