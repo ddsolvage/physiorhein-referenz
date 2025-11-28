@@ -274,7 +274,7 @@ export default function Home() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {whyUs.map((item, index) => (
                       <div key={index} className="flex items-start gap-4">
-                          <div className="w-1 bg-primary rounded-full" style={{height: '6rem'}}></div>
+                          <div className="w-1 bg-primary rounded-full self-stretch"></div>
                           <div className="flex-1">
                               <h3 className="text-lg font-bold mb-2">{item.title}</h3>
                               <p className="text-muted-foreground text-sm">{item.description}</p>
