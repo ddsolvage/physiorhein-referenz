@@ -255,7 +255,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-16">
-            <Button asChild size="lg" variant="link" className="text-lg text-primary hover:underline">
+            <Button asChild size="lg" variant="link" className="text-lg text-primary underline hover:underline">
               <Link href="/kontakt">
                 Jetzt ersten Termin vereinbaren
                 <ArrowRight className="ml-2 h-5 w-5" />
