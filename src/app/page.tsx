@@ -10,7 +10,8 @@ import {
   Stethoscope,
   Bed,
   ClipboardCheck,
-  ArrowRight
+  ArrowRight,
+  Clock,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
@@ -18,9 +19,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { placeholderImages } from '@/lib/placeholder-images';
 
 const trustBadges = [
-  { icon: Star, text: '4,9 / 5 bei über 180 Google-Bewertungen' },
-  { icon: Award, text: 'Zertifizierte Therapeut:innen mit über 10 Jahren Erfahrung' },
-  { icon: ShieldCheck, text: 'Kassen- & Privatleistungen, BG und Selbstzahler' },
+  { icon: Star, text: '180+ Bewertungen', subtext: 'Google & Jameda' },
+  { icon: ShieldCheck, text: 'Alle Kassen', subtext: 'GKV, PKV & BG' },
 ];
 
 const services = [
@@ -109,36 +109,60 @@ export default function Home() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="bg-background">
-        <div className="container mx-auto px-4 py-20 md:py-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div className="flex flex-col gap-6 text-center md:text-left">
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                Bewegung zurück ins Leben.
+        <div className="container mx-auto px-4 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col gap-8 text-center lg:text-left">
+              
+              <div className="flex justify-center lg:justify-start">
+                  <div className="inline-flex items-center gap-3 bg-white p-2 pr-4 rounded-full">
+                      <div className="flex items-center">
+                          {[...Array(5)].map((_, i) => (
+                              <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                          ))}
+                      </div>
+                      <span className="font-semibold">4.9</span>
+                      <span className="text-muted-foreground">Exzellent</span>
+                  </div>
+              </div>
+
+              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight">
+                Bewegung <br />
+                <span className="relative inline-block">
+                  zurück ins Leben.
+                  <span className="absolute left-0 -bottom-2 w-full h-1.5 bg-primary/30"></span>
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground">
-                Moderne Physiotherapie & Osteopathie in Wiesbaden – mit Zeit für Ihre Geschichte statt Fließbandbehandlung.
+              
+              <p className="text-lg md:text-xl text-muted-foreground max-w-lg mx-auto lg:mx-0">
+                Moderne Physiotherapie & Osteopathie in Wiesbaden.
+                Wir nehmen uns 45 Minuten Zeit für Ihre Geschichte statt Fließbandbehandlung.
               </p>
-              <p className="text-base text-muted-foreground">
-                Bei PhysioRhein kombinieren wir evidenzbasierte Therapie, modernste Diagnostik und echte Zuwendung. Wir nehmen uns 45 Minuten pro Termin für Sie – damit Beschwerden nicht nur behandelt, sondern verstanden werden.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-4">
-                <Button asChild size="lg" className="text-lg py-6 px-8">
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/80 text-lg py-6 px-8 rounded-full">
                   <Link href="/kontakt">Termin vereinbaren</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="text-lg py-6 px-8">
+                <Button asChild size="lg" variant="outline" className="bg-white hover:bg-gray-100 text-foreground border-gray-300 text-lg py-6 px-8 rounded-full">
                   <Link href="/kontakt#form">Rückruf anfordern</Link>
                 </Button>
               </div>
-              <div className="mt-8 flex flex-col gap-4">
+
+              <div className="mt-6 flex items-center justify-center lg:justify-start gap-8">
                 {trustBadges.map((badge, index) => (
-                  <div key={index} className="flex items-center gap-3 justify-center md:justify-start">
-                    <badge.icon className="h-5 w-5 text-primary" />
-                    <span className="text-sm text-muted-foreground">{badge.text}</span>
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="bg-gray-200/70 text-gray-600 p-2 rounded-md">
+                        <badge.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                        <p className="font-semibold text-sm">{badge.text}</p>
+                        <p className="text-xs text-muted-foreground">{badge.subtext}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
-            <div className="relative h-80 md:h-[500px] w-full rounded-2xl overflow-hidden shadow-2xl">
+            
+            <div className="relative h-[350px] md:h-[500px] lg:h-[600px] w-full rounded-3xl overflow-hidden shadow-2xl">
               {heroImage && (
                 <Image
                   src={heroImage.imageUrl}
@@ -150,6 +174,17 @@ export default function Home() {
                   priority
                 />
               )}
+              <div className="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-6 bg-white/80 backdrop-blur-sm p-4 rounded-2xl shadow-md">
+                  <div className="flex items-center gap-4">
+                      <div className="bg-blue-100 text-primary p-2 rounded-full">
+                          <Clock className="h-5 w-5"/>
+                      </div>
+                      <div>
+                          <p className="font-bold text-foreground">45 Min. Termine</p>
+                          <p className="text-sm text-muted-foreground">Zeit für echte Gesundheit.</p>
+                      </div>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
