@@ -1,14 +1,12 @@
 import Link from 'next/link';
-import { Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, Linkedin, Mail, MapPin, Phone, HeartPulse } from 'lucide-react';
 
 const Logo = () => (
-  <div className="flex items-center gap-2">
-    <div className="bg-foreground text-background p-1.5 rounded-md">
-      <span className="font-bold text-sm">P</span>
+    <div className="flex items-center gap-2">
+      <HeartPulse className="h-6 w-6 text-primary" />
+      <span className="text-lg font-bold">PhysioRhein</span>
     </div>
-    <span className="text-lg font-bold">PhysioRhein</span>
-  </div>
-);
+  );
 
 export function Footer() {
   return (

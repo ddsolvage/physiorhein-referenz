@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
+import { Menu, X, HeartPulse } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -18,13 +18,11 @@ const navLinks = [
 ];
 
 const Logo = () => (
-  <div className="flex items-center gap-2">
-    <div className="bg-foreground text-background p-1.5 rounded-md">
-      <span className="font-bold text-sm">P</span>
+    <div className="flex items-center gap-2">
+      <HeartPulse className="h-6 w-6 text-primary" />
+      <span className="font-bold">PhysioRhein</span>
     </div>
-    <span className="font-bold">PhysioRhein</span>
-  </div>
-);
+  );
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
