@@ -13,7 +13,6 @@ const navLinks = [
   { href: "/leistungen", label: "Leistungen" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/patienteninfos", label: "Patienteninfos" },
-  { href: "/trainingsplan-erstellen", label: "KI Trainingsplan" },
   { href: "/kontakt", label: "Kontakt" },
 ];
 
