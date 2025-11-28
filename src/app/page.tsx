@@ -143,10 +143,10 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/80 text-lg py-6 px-8 rounded-full">
+                <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/80 text-lg py-6 px-8">
                   <Link href="/kontakt">Termin vereinbaren</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="bg-white hover:bg-gray-100 text-foreground border-gray-300 text-lg py-6 px-8 rounded-full">
+                <Button asChild size="lg" variant="outline" className="bg-white hover:bg-gray-100 text-foreground border-gray-300 text-lg py-6 px-8">
                   <Link href="/kontakt#form">Rückruf anfordern</Link>
                 </Button>
               </div>
@@ -255,7 +255,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-16">
-            <Button asChild size="lg" variant="link" className="text-lg text-primary underline hover:underline">
+            <Button asChild size="lg" variant="link" className="text-lg text-primary hover:underline underline">
               <Link href="/kontakt">
                 Jetzt ersten Termin vereinbaren
                 <ArrowRight className="ml-2 h-5 w-5" />
