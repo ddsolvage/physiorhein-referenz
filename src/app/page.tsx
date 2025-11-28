@@ -189,13 +189,10 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Ihr Weg zu mehr Beweglichkeit – klar in drei Schritten.</h2>
           </div>
           <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
-             <div className="absolute top-1/2 left-0 w-full h-px bg-border hidden md:block"></div>
+            <div className="absolute top-1/2 left-0 w-full h-px bg-border hidden md:block" style={{ top: 'calc(1.25rem + 1px)' }}></div>
             {steps.map((step) => (
               <div key={step.step} className="relative flex flex-col items-center text-center p-6">
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-background hidden md:flex items-center justify-center">
-                    <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-lg">{step.step}</div>
-                 </div>
-                 <div className="md:hidden w-12 h-12 mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl">{step.step}</div>
+                <div className="relative z-10 w-12 h-12 mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl ring-8 ring-background">{step.step}</div>
                 <h3 className="text-xl font-semibold mt-4 mb-2">{step.title}</h3>
                 <p className="text-muted-foreground">{step.description}</p>
               </div>
@@ -266,7 +263,7 @@ export default function Home() {
               <p className="mb-8">Rheinstraße 74, 65185 Wiesbaden</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button asChild size="lg" variant="secondary" className="text-lg py-6 px-8">
-                      <a href="https://www.google.com/maps/search/?api=1&query=Rheinstraße+74+65185+Wiesbaden" target="_blank" rel="noopener noreferrer">Route planen</a>
+                      <a href="https://www.google.com/maps/search/?api=1&query=Rheinstraße+74+65185+W Wiesbaden" target="_blank" rel="noopener noreferrer">Route planen</a>
                   </Button>
                   <Button asChild size="lg" variant="secondary" className="text-lg py-6 px-8">
                       <a href="tel:+496112345678">Jetzt anrufen</a>
