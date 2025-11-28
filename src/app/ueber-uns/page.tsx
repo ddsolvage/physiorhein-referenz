@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { placeholderImages } from '@/lib/placeholder-images';
+import { Ear, BrainCircuit, Dumbbell } from 'lucide-react';
 
 const teamMembers = [
   {
@@ -33,9 +34,18 @@ const teamMembers = [
 ];
 
 const philosophyPoints = [
-    "Wir hören zu, bevor wir behandeln.",
-    "Wir erklären, bevor wir belasten.",
-    "Wir machen Sie stark, statt Sie abhängig zu machen."
+    {
+        icon: Ear,
+        text: "Wir hören zu, bevor wir behandeln."
+    },
+    {
+        icon: BrainCircuit,
+        text: "Wir erklären, bevor wir belasten."
+    },
+    {
+        icon: Dumbbell,
+        text: "Wir machen Sie stark, statt Sie abhängig zu machen."
+    }
 ];
 
 export default function UeberUnsPage() {
@@ -112,15 +122,21 @@ export default function UeberUnsPage() {
             
             <section className="py-16 md:py-24 bg-white">
                 <div className="container mx-auto px-4">
-                    <div className="text-center max-w-3xl mx-auto">
-                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">Unser Therapieansatz in drei Sätzen.</h2>
-                        <div className="space-y-6">
-                            {philosophyPoints.map(point => (
-                                <p key={point} className="text-2xl md:text-3xl font-medium text-foreground">
-                                    {point}
+                    <div className="text-center max-w-3xl mx-auto mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Unser Therapieansatz</h2>
+                        <p className="mt-4 text-lg text-muted-foreground">In drei klaren Schritten zu Ihrer Genesung.</p>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {philosophyPoints.map((point, index) => (
+                             <div key={index} className="flex flex-col items-center text-center p-6 bg-background rounded-2xl shadow-sm">
+                                <div className="bg-primary/10 p-4 rounded-full mb-4">
+                                    <point.icon className="w-8 h-8 text-primary" />
+                                </div>
+                                <p className="text-xl font-semibold text-foreground">
+                                    {point.text}
                                 </p>
-                            ))}
-                        </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
