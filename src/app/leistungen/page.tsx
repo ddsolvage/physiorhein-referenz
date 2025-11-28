@@ -81,7 +81,7 @@ export default function LeistungenPage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="w-full space-y-4">
+            <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
               {services.map((service, index) => (
                 <AccordionItem
                   key={index}
