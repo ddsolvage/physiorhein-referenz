@@ -98,7 +98,7 @@ export default function PatienteninfosPage() {
                         <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Häufige Fragen (FAQ)</h2>
                     </div>
                     <div className="max-w-3xl mx-auto">
-                        <Accordion type="single" collapsible className="w-full space-y-4">
+                        <Accordion type="single" collapsible defaultValue="item-0" className="w-full space-y-4">
                             {faqs.map((faq, index) => (
                                 <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-2xl shadow-md border-none data-[state=open]:shadow-xl transition-shadow">
                                     <AccordionTrigger className="p-6 text-left hover:no-underline group">
