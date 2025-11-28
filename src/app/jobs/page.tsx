@@ -206,17 +206,18 @@ export default function JobsPage() {
                         <p className="mt-4 text-lg text-muted-foreground">Ihr Weg zu uns in drei einfachen Schritten.</p>
                     </div>
                     <div className="relative max-w-4xl mx-auto">
-                        <div className="absolute top-8 left-8 w-px h-[calc(100%-4rem)] bg-border md:top-8 md:left-1/2 md:w-[calc(100%-4rem)] md:h-px" />
-                        <div className="relative grid md:grid-cols-3 gap-16">
-                        {applicationSteps.map((step) => (
-                            <div key={step.step} className="relative flex md:flex-col items-center text-left md:text-center gap-6">
-                            <div className="relative z-10 w-16 h-16 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center font-bold text-2xl ring-8 ring-background flex-shrink-0">{step.step}</div>
-                            <div>
-                                <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
-                                <p className="text-muted-foreground">{step.description}</p>
-                            </div>
-                            </div>
-                        ))}
+                        <div className="absolute top-8 left-8 w-px h-[calc(100%-4rem)] bg-border md:hidden" />
+                        <div className="hidden md:block absolute top-8 left-0 w-full h-px bg-border" />
+                        <div className="relative grid md:grid-cols-3 gap-y-16 md:gap-x-8">
+                            {applicationSteps.map((step) => (
+                                <div key={step.step} className="relative flex md:flex-col items-center text-left md:text-center gap-6">
+                                    <div className="relative z-10 w-16 h-16 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center font-bold text-2xl ring-8 ring-background flex-shrink-0">{step.step}</div>
+                                    <div>
+                                        <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                                        <p className="text-muted-foreground">{step.description}</p>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
