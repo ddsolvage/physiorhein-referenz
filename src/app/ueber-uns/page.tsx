@@ -126,10 +126,10 @@ export default function UeberUnsPage() {
                         <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Unser Therapieansatz</h2>
                         <p className="mt-4 text-lg text-muted-foreground">In drei klaren Schritten zu Ihrer Genesung.</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div className="max-w-3xl mx-auto space-y-12">
                         {philosophyPoints.map((point, index) => (
-                             <div key={index} className="flex items-center gap-6">
-                                <div className="bg-primary/10 p-4 rounded-full">
+                             <div key={index} className="flex flex-col md:flex-row items-center text-center md:text-left gap-6">
+                                <div className="bg-primary/10 p-4 rounded-full flex-shrink-0">
                                     <point.icon className="w-8 h-8 text-primary" />
                                 </div>
                                 <p className="text-xl font-semibold text-foreground">
