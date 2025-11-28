@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CheckCircle2, Info } from "lucide-react";
+import { CheckCircle2, Info, FileQuestion } from "lucide-react";
 import { placeholderImages } from "@/lib/placeholder-images";
 
 const checklistItems = [
@@ -39,32 +39,20 @@ export default function PatienteninfosPage() {
   
     return (
         <div>
-            <section className="relative pt-20 pb-12 md:pt-32 md:pb-24 bg-white">
-                {heroImage && (
-                <div className="absolute inset-0">
-                    <Image
-                    src={heroImage.imageUrl}
-                    alt={heroImage.description}
-                    fill
-                    className="object-cover"
-                    data-ai-hint={heroImage.imageHint}
-                    />
-                    <div className="absolute inset-0 bg-background/80" />
-                </div>
-                )}
-                <div className="container mx-auto px-4 relative">
-                    <div className="max-w-3xl text-center mx-auto">
+            <section className="py-16 md:py-24 bg-background">
+                <div className="container mx-auto px-4">
+                    <div className="max-w-3xl text-center mx-auto flex flex-col items-center">
+                        <div className="bg-primary/10 p-4 rounded-full mb-6">
+                            <FileQuestion className="w-10 h-10 text-primary" />
+                        </div>
                         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
                             Gut zu wissen: Infos für Ihren Besuch
                         </h1>
-                        <p className="mt-6 text-lg md:text-xl text-muted-foreground">
-                            Alles, was Sie für Ihren ersten Termin bei PhysioRhein wissen müssen – kompakt und übersichtlich.
-                        </p>
                     </div>
                 </div>
             </section>
 
-            <section id="checklist" className="py-16 md:py-24 bg-background">
+            <section id="checklist" className="py-16 md:py-24 bg-white">
                 <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <h2 className="text-3xl font-bold tracking-tight mb-4">Was Sie zum ersten Termin mitbringen sollten</h2>
@@ -92,7 +80,7 @@ export default function PatienteninfosPage() {
                 </div>
             </section>
 
-            <section id="faq" className="py-16 md:py-24 bg-white">
+            <section id="faq" className="py-16 md:py-24 bg-background">
                 <div className="container mx-auto px-4">
                     <div className="text-center max-w-3xl mx-auto mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Häufige Fragen (FAQ)</h2>
