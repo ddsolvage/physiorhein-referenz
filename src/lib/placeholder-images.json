@@ -3,7 +3,7 @@
     {
       "id": "hero",
       "description": "Lichtdurchfluteter Behandlungsraum, Therapeut stützt Patientin bei einer Übung.",
-      "imageUrl": "https://images.unsplash.com/photo-1631558553269-03a775c388b5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cGh5c2lvdGhlcmFweSUyMHBhdGllbnR8ZW58MHx8fHwxNzY0MjU0NjMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1645005512968-0c1fe99f0093?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaHlzaW98ZW58MHx8fHwxNzY0MzQxNTYzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "physiotherapy patient"
     },
     {
@@ -27,7 +27,7 @@
     {
       "id": "about-us-hero",
       "description": "Team von Physiotherapeuten in einer Besprechung",
-      "imageUrl": "https://images.unsplash.com/photo-1717500252780-036bfd89f810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaHlzaW90aGVyYXB5JTIwdGVhbSUyMG1lZXRpbmd8ZW58MHx8fHwxNzY0MzM2NzcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://images.unsplash.com/photo-1717500252780-0d6bfd89f810?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwaHlzaW90aGVyYXB5JTIwdGVhbSUyMG1lZXRpbmd8ZW58MHx8fHwxNzY0MzM2NzcwfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "physiotherapy team meeting"
     },
     {
