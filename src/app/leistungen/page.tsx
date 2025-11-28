@@ -90,7 +90,7 @@ export default function LeistungenPage() {
                 >
                   <AccordionTrigger className="p-6 text-left hover:no-underline group">
                     <div className="flex-1 pr-4">
-                      <h3 className="text-xl font-semibold text-primary group-data-[state=open]:text-primary mb-1">{service.title}</h3>
+                      <h3 className="text-xl font-semibold text-foreground group-data-[state=open]:text-primary mb-1">{service.title}</h3>
                       <p className="text-muted-foreground text-base">{service.teaser}</p>
                     </div>
                   </AccordionTrigger>
