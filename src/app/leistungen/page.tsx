@@ -40,6 +40,12 @@ const services = [
     details: "Craniomandibuläre Dysfunktion (CMD) beschreibt eine Fehlregulation des Kiefergelenks, die vielfältige Symptome wie Kopf-, Nacken- und Rückenschmerzen, Schwindel oder Tinnitus auslösen kann. In enger Zusammenarbeit mit Ihrem Zahnarzt oder Kieferorthopäden behandeln wir die beteiligten Muskeln und Gelenke, um das System wieder ins Gleichgewicht zu bringen.",
     coverage: ["Kassenleistung", "Privatleistung"],
   },
+  {
+    title: "Prävention & Gesundheitscoaching",
+    teaser: "Programme zur Vorbeugung von Beschwerden und zur Förderung eines gesunden Lebensstils.",
+    details: "Investieren Sie in Ihre Zukunft. Wir bieten maßgeschneiderte Präventionsprogramme, Haltungsanalysen, Ergonomieberatung am Arbeitsplatz und individuelles Coaching, um Schmerzen vorzubeugen, bevor sie entstehen.",
+    coverage: ["Privatleistung / Selbstzahler"],
+  },
 ];
 
 export default function LeistungenPage() {
