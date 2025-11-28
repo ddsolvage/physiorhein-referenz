@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, HeartPulse } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
@@ -13,8 +13,18 @@ const navLinks = [
   { href: "/leistungen", label: "Leistungen" },
   { href: "/ueber-uns", label: "Über uns" },
   { href: "/patienteninfos", label: "Patienteninfos" },
+  { href: "/jobs", label: "Jobs" },
   { href: "/kontakt", label: "Kontakt" },
 ];
+
+const Logo = () => (
+  <div className="flex items-center gap-2">
+    <div className="bg-foreground text-background p-1.5 rounded-md">
+      <span className="font-bold text-sm">P</span>
+    </div>
+    <span className="font-bold">PhysioRhein</span>
+  </div>
+);
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -36,9 +46,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center gap-2">
-          <HeartPulse className="h-6 w-6 text-primary" />
-          <span className="font-bold">PhysioRhein</span>
+        <Link href="/" className="mr-6 flex items-center">
+          <Logo />
         </Link>
 
         <nav className="hidden md:flex md:items-center md:gap-6 text-sm">
@@ -62,9 +71,8 @@ export function Header() {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center mb-8">
-                   <Link href="/" className="flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
-                      <HeartPulse className="h-6 w-6 text-primary" />
-                      <span className="font-bold">PhysioRhein</span>
+                   <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+                      <Logo />
                     </Link>
                 </div>
 
