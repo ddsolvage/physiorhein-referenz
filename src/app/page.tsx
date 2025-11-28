@@ -79,10 +79,10 @@ const steps = [
 ];
 
 const whyUs = [
-    { icon: Clock, title: '45 Minuten pro Behandlung', description: 'Mehr Zeit bedeutet bessere Diagnostik, gezieltere Behandlung und Raum für Ihre Fragen.' },
-    { icon: BrainCircuit, title: 'Ganzheitlicher Blick', description: 'Wir betrachten den ganzen Menschen – Bewegungsmuster, Alltag, Schlaf, Stress. Mit klarem Konzept.' },
-    { icon: Users, title: 'Interdisziplinär vernetzt', description: 'Enge Zusammenarbeit mit Ärzt:innen, Orthopäd:innen, Osteopath:innen und Trainer:innen im Raum Wiesbaden.' },
-    { icon: Smartphone, title: 'Digitale Unterstützung', description: 'Übungsprogramme als App, Erinnerungen an Hausaufgaben und Video-Feedback bei Bedarf.' },
+    { title: '45 Minuten pro Behandlung', description: 'Mehr Zeit bedeutet bessere Diagnostik, gezieltere Behandlung und Raum für Ihre Fragen.' },
+    { title: 'Ganzheitlicher Blick', description: 'Wir betrachten den ganzen Menschen – Bewegungsmuster, Alltag, Schlaf, Stress. Ohne esoterische Versprechen, dafür mit klarem Konzept.' },
+    { title: 'Interdisziplinär vernetzt', description: 'Enge Zusammenarbeit mit Ärzt:innen, Orthopäd:innen, Osteopath:innen und Trainer:innen im Raum Wiesbaden.' },
+    { title: 'Digitale Unterstützung', description: 'Übungsprogramme als App, Erinnerungen an Hausaufgaben und Video-Feedback bei Bedarf.' },
 ];
 
 const testimonials = [
@@ -268,18 +268,17 @@ export default function Home() {
       {/* Why Us Section */}
       <section className="py-16 md:py-24 bg-white">
           <div className="container mx-auto px-4">
-              <div className="text-center max-w-3xl mx-auto mb-12">
+              <div className="text-left mb-12">
                   <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Warum PhysioRhein?</h2>
-                  <p className="mt-4 text-lg text-muted-foreground">Vier gute Gründe für Ihre Gesundheit.</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                   {whyUs.map((item, index) => (
-                      <div key={index} className="flex flex-col items-center text-center p-6">
-                           <div className="bg-primary/10 p-4 rounded-full mb-4 text-primary">
-                                <item.icon className="w-8 h-8" />
-                            </div>
-                          <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                          <p className="text-muted-foreground">{item.description}</p>
+                      <div key={index} className="flex items-start gap-4">
+                          <div className="w-1 bg-primary rounded-full" style={{height: '6rem'}}></div>
+                          <div className="flex-1">
+                              <h3 className="text-lg font-bold mb-2">{item.title}</h3>
+                              <p className="text-muted-foreground text-sm">{item.description}</p>
+                          </div>
                       </div>
                   ))}
               </div>
