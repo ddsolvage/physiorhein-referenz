@@ -14,7 +14,7 @@ export default function ImpressumPage() {
   
           <h2>Kontakt</h2>
           <p>
-            Telefon: +49 (0)611 2345678<br/>
+            Telefon: +49 (0)123 456789<br/>
             E-Mail: hallo@physiorhein.de
           </p>
   

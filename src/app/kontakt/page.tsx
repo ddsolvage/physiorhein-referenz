@@ -181,7 +181,7 @@ export default function KontaktPage() {
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <Phone className="w-5 h-5 text-primary" />
-                                        <a href="tel:+496112345678" className="text-muted-foreground hover:text-primary">+49 (0)611 2345678</a>
+                                        <a href="tel:+49123456789" className="text-muted-foreground hover:text-primary">+49 (0)123 456789</a>
                                     </div>
                                     <div className="flex items-center gap-4">
                                         <Mail className="w-5 h-5 text-primary" />

@@ -143,10 +143,10 @@ export default function Home() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/80 text-lg py-6 px-8">
+                <Button asChild size="lg" className="bg-foreground text-background hover:bg-foreground/80 text-lg py-6 px-8 rounded-lg">
                   <Link href="/kontakt">Termin vereinbaren</Link>
                 </Button>
-                <Button asChild size="lg" variant="outline" className="bg-white hover:bg-gray-100 text-foreground border-gray-300 text-lg py-6 px-8">
+                <Button asChild size="lg" variant="outline" className="bg-white hover:bg-gray-100 text-foreground border-gray-300 text-lg py-6 px-8 rounded-lg">
                   <Link href="/kontakt#form">Rückruf anfordern</Link>
                 </Button>
               </div>
@@ -255,7 +255,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-16">
-            <Button asChild size="lg" variant="link" className="text-lg text-primary hover:underline underline">
+            <Button asChild size="lg" variant="link" className="text-lg text-primary hover:underline underline-offset-4">
               <Link href="/kontakt">
                 Jetzt ersten Termin vereinbaren
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -324,7 +324,7 @@ export default function Home() {
                       <a href="https://www.google.com/maps/search/?api=1&query=Rheinstraße+74+65185+W Wiesbaden" target="_blank" rel="noopener noreferrer">Route planen</a>
                   </Button>
                   <Button asChild size="lg" variant="secondary" className="text-lg py-6 px-8">
-                      <a href="tel:+496112345678">Jetzt anrufen</a>
+                      <a href="tel:+49123456789">Jetzt anrufen</a>
                   </Button>
               </div>
           </div>

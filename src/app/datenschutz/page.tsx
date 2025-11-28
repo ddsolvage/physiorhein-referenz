@@ -19,7 +19,7 @@ export default function DatenschutzPage() {
             Marc Weber<br/>
             Rheinstraße 74<br/>
             65185 Wiesbaden<br/>
-            Telefon: +49 (0)611 2345678<br/>
+            Telefon: +49 (0)123 456789<br/>
             E-Mail: hallo@physiorhein.de
           </p>
   
