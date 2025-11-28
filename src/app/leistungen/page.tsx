@@ -7,43 +7,38 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { placeholderImages } from "@/lib/placeholder-images";
+import { ChevronDown } from "lucide-react";
 
 const services = [
   {
     title: "Allgemeine & spezielle Krankengymnastik",
-    teaser: "Funktionelle Übungen zur Verbesserung von Beweglichkeit, Kraft und Koordination – individuell auf Ihren Alltag abgestimmt.",
-    details: "Unsere Krankengymnastik (KG) ist die Basis vieler Behandlungen. Nach einer ausführlichen Befunderhebung erstellen wir einen individuellen Trainingsplan mit aktiven Übungen, die Sie auch zu Hause durchführen können. Ziel ist es, Ihre Muskulatur zu kräftigen, die Beweglichkeit zu verbessern und Schmerzen zu reduzieren.",
+    teaser: "Funktionelle Übungen zur Verbesserung von Beweglichkeit, Kraft und Koordination.",
+    details: "Wir analysieren Ihre Bewegungsmuster und erstellen einen individuellen Plan, der genau auf Ihren Alltag abgestimmt ist. Egal ob nach Verletzungen oder bei chronischen Fehlhaltungen.",
     coverage: ["Kassenleistung", "Privatleistung"],
   },
   {
     title: "Manuelle Therapie",
-    teaser: "Gezielte, schonende Handgriffe zur Verbesserung der Gelenkbeweglichkeit, Schmerzlinderung und Entlastung gereizter Strukturen.",
+    teaser: "Gezielte, schonende Handgriffe zur Verbesserung der Gelenkbeweglichkeit.",
     details: "Die Manuelle Therapie (MT) ist eine spezialisierte Form der Physiotherapie, bei der Therapeuten Funktionsstörungen des Bewegungsapparates untersuchen und behandeln. Durch gezielte Mobilisation von Gelenken und Techniken zur Muskelentspannung können Blockaden gelöst und Schmerzen effektiv gelindert werden.",
     coverage: ["Kassenleistung", "Privatleistung"],
   },
   {
     title: "Osteopathie",
-    teaser: "Sanfte ganzheitliche Behandlung von Bewegungsapparat, inneren Organen und Nervensystem mit dem Ziel, Spannungen zu lösen und Selbstheilung zu unterstützen.",
+    teaser: "Sanfte ganzheitliche Behandlung von Bewegungsapparat, Organen und Nervensystem.",
     details: "Die Osteopathie betrachtet den Körper als Einheit. Störungen in einem Bereich können Beschwerden an anderer Stelle verursachen. Mit sanften, manuellen Techniken spüren wir diese Zusammenhänge auf und behandeln nicht nur Symptome, sondern auch deren Ursachen, um die Selbstheilungskräfte des Körpers zu aktivieren. Viele Krankenkassen erstatten einen Teil der Kosten.",
     coverage: ["Privatleistung / Selbstzahler"],
   },
   {
     title: "Sportphysiotherapie",
-    teaser: "Return-to-Sport-Konzepte, Belastungssteuerung, Leistungsdiagnostik und sportartspezifische Reha.",
+    teaser: "Return-to-Sport-Konzepte, Belastungssteuerung und Leistungsdiagnostik.",
     details: "Ob Amateur- oder Leistungssportler, wir begleiten Sie nach Verletzungen oder Operationen zurück zu Ihrer vollen Leistungsfähigkeit. Unsere Sportphysiotherapie umfasst sportartspezifisches Training, Taping, manuelle Techniken und eine individuelle Belastungssteuerung, um erneuten Verletzungen vorzubeugen.",
     coverage: ["Kassenleistung", "Privatleistung"],
   },
   {
     title: "CMD-Behandlung (Kiefer)",
-    teaser: "Behandlung von Kiefergelenk und umgebenden Strukturen bei Knirschen, Pressen, Kopfschmerzen oder Ohrgeräuschen in Zusammenarbeit mit Zahnärzt:innen.",
+    teaser: "Behandlung bei Knirschen, Pressen, Kopfschmerzen oder Ohrgeräuschen.",
     details: "Craniomandibuläre Dysfunktion (CMD) beschreibt eine Fehlregulation des Kiefergelenks, die vielfältige Symptome wie Kopf-, Nacken- und Rückenschmerzen, Schwindel oder Tinnitus auslösen kann. In enger Zusammenarbeit mit Ihrem Zahnarzt oder Kieferorthopäden behandeln wir die beteiligten Muskeln und Gelenke, um das System wieder ins Gleichgewicht zu bringen.",
     coverage: ["Kassenleistung", "Privatleistung"],
-  },
-  {
-    title: "Prävention & Gesundheitscoaching",
-    teaser: "Check-ups, Haltungs- und Bewegungsanalysen, persönliche Präventionsprogramme für Arbeitsplatz und Alltag.",
-    details: "Der beste Schmerz ist der, der gar nicht erst entsteht. Mit unseren Präventionsangeboten helfen wir Ihnen, Risikofaktoren zu erkennen und aktiv gegenzusteuern. Dies umfasst ergonomische Beratung für den Arbeitsplatz, individuelle Trainingspläne und die Analyse von Bewegungsmustern, um Fehlbelastungen frühzeitig zu korrigieren.",
-    coverage: ["Privatleistung / Selbstzahler"],
   },
 ];
 
@@ -85,18 +80,20 @@ export default function LeistungenPage() {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="bg-white rounded-2xl shadow-md border-none"
+                  className="bg-white rounded-2xl shadow-md border-none data-[state=open]:shadow-xl transition-shadow"
                 >
-                  <AccordionTrigger className="p-6 text-lg font-semibold text-left hover:no-underline">
-                    {service.title}
+                  <AccordionTrigger className="p-6 text-left hover:no-underline group">
+                    <div className="flex-1 pr-4">
+                      <h3 className="text-xl font-semibold text-primary group-data-[state=open]:text-primary mb-1">{service.title}</h3>
+                      <p className="text-muted-foreground text-base">{service.teaser}</p>
+                    </div>
                   </AccordionTrigger>
                   <AccordionContent className="p-6 pt-0">
-                    <p className="text-muted-foreground mb-4">{service.teaser}</p>
                     <p className="mb-4">{service.details}</p>
                     <div className="flex flex-wrap gap-2">
                       {service.coverage.map((tag) => (
-                        <Badge key={tag} variant={tag === "Kassenleistung" ? "default" : "secondary"}>
-                          {tag}
+                        <Badge key={tag} variant={tag.includes("Kassenleistung") ? "outline" : "secondary"} className="border-gray-300">
+                          {tag.replace(" / Selbstzahler", "")}
                         </Badge>
                       ))}
                     </div>
