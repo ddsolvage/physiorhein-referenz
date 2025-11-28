@@ -133,7 +133,7 @@ export default function JobsPage() {
                                     <CardTitle className="text-2xl font-bold mb-2">{job.title}</CardTitle>
                                     <div className="flex flex-wrap gap-2">
                                         {job.tags.map(tag => (
-                                            <span key={tag} className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-primary-foreground bg-primary">
+                                            <span key={tag} className="text-xs font-semibold inline-block py-1 px-2.5 uppercase rounded-full text-primary bg-white">
                                                 {tag}
                                             </span>
                                         ))}
@@ -149,7 +149,7 @@ export default function JobsPage() {
                         ))}
                          <Card className="bg-foreground text-background border-none rounded-2xl p-8 text-center">
                             <h3 className="text-xl font-semibold mb-2">Initiativbewerbung</h3>
-                            <p className="text-background/80 mb-4">Ihre Traumstelle ist nicht dabei? Wir sind immer offen für talentierte Menschen. Überraschen Sie uns!</p>
+                            <p className="text-white mb-4">Ihre Traumstelle ist nicht dabei? Wir sind immer offen für talentierte Menschen. Überraschen Sie uns!</p>
                             <Button asChild variant="secondary">
                                 <Link href="/kontakt">Jetzt initiativ bewerben</Link>
                             </Button>
