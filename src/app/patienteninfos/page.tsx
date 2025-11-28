@@ -83,10 +83,10 @@ export default function PatienteninfosPage() {
                             <Info className="w-6 h-6 text-primary flex-shrink-0" />
                             <h3 className="text-2xl font-bold">Kassen- &amp; Privatleistungen</h3>
                         </div>
-                        <div className="space-y-4 text-muted-foreground">
-                        <p className='text-background/80'>Wir behandeln gesetzlich Versicherte, Privatpatient:innen und Selbstzahler.</p>
-                        <p className='text-background/80'>Je nach Krankenkasse und Verordnung können bei gesetzlich Versicherten gesetzliche Zuzahlungen anfallen. Wir informieren Sie hierüber transparent vor Behandlungsbeginn.</p>
-                        <p className='text-background/80'>Osteopathische Behandlungen sind in der Regel Privatleistungen. Viele gesetzliche Krankenkassen erstatten jedoch einen Teil der Kosten. Bitte erkundigen Sie sich vorab bei Ihrer Kasse.</p>
+                        <div className="space-y-4 text-background/80">
+                        <p>Wir behandeln gesetzlich Versicherte, Privatpatient:innen und Selbstzahler.</p>
+                        <p>Je nach Krankenkasse und Verordnung können bei gesetzlich Versicherten gesetzliche Zuzahlungen anfallen. Wir informieren Sie hierüber transparent vor Behandlungsbeginn.</p>
+                        <p>Osteopathische Behandlungen sind in der Regel Privatleistungen. Viele gesetzliche Krankenkassen erstatten jedoch einen Teil der Kosten. Bitte erkundigen Sie sich vorab bei Ihrer Kasse.</p>
                         </div>
                     </div>
                 </div>
@@ -100,9 +100,11 @@ export default function PatienteninfosPage() {
                     <div className="max-w-3xl mx-auto">
                         <Accordion type="single" collapsible className="w-full space-y-4">
                             {faqs.map((faq, index) => (
-                                <AccordionItem key={index} value={`item-${index}`} className="bg-background rounded-2xl border-none shadow-sm">
-                                    <AccordionTrigger className="p-6 text-lg font-semibold text-left hover:no-underline">
-                                        {faq.question}
+                                <AccordionItem key={index} value={`item-${index}`} className="bg-white rounded-2xl shadow-md border-none data-[state=open]:shadow-xl transition-shadow">
+                                    <AccordionTrigger className="p-6 text-left hover:no-underline group">
+                                         <span className="flex-1 pr-4 text-lg font-semibold text-foreground group-data-[state=open]:text-primary">
+                                            {faq.question}
+                                        </span>
                                     </AccordionTrigger>
                                     <AccordionContent className="p-6 pt-0 text-muted-foreground">
                                         {faq.answer}
