@@ -59,17 +59,17 @@ const services = [
 const steps = [
   {
     step: 1,
-    title: 'Ankommen & Zuhören',
+    title: '1. Ankommen & Zuhören',
     description: 'Wir nehmen uns Zeit für Ihre Geschichte, Ihre Beschwerden und Ihre Ziele. Keine fünf-Minuten-Anamnese, sondern ein echtes Gespräch.',
   },
   {
     step: 2,
-    title: 'Analyse & Befund',
+    title: '2. Analyse & Befund',
     description: 'Wir testen Beweglichkeit, Kraft, Haltung und Alltagsbelastungen. Sie verstehen danach, woher Ihre Beschwerden kommen.',
   },
   {
     step: 3,
-    title: 'Individuelle Therapie & Plan',
+    title: '3. Individuelle Therapie & Plan',
     description: 'Gemeinsam legen wir Behandlungsziele, sinnvolle Termine und Übungen für zuhause fest – transparent und nachvollziehbar.',
   },
 ];
@@ -186,21 +186,41 @@ export default function Home() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Ihr Weg zu mehr Beweglichkeit – klar in drei Schritten.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Ihr Weg zu mehr Beweglichkeit</h2>
+            <p className="mt-4 text-lg text-muted-foreground">Klar in drei Schritten.</p>
           </div>
-          <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0">
-            <div className="absolute top-1/2 left-0 w-full h-px bg-border hidden md:block" style={{ top: 'calc(1.25rem + 1px)' }}></div>
-            {steps.map((step) => (
-              <div key={step.step} className="relative flex flex-col items-center text-center p-6">
-                <div className="relative z-10 w-12 h-12 mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-xl ring-8 ring-background">{step.step}</div>
-                <h3 className="text-xl font-semibold mt-4 mb-2">{step.title}</h3>
-                <p className="text-muted-foreground">{step.description}</p>
-              </div>
-            ))}
+          
+          <div className="relative">
+            {/* Desktop Timeline */}
+            <div className="hidden md:grid grid-cols-3 gap-16 items-start">
+              <div className="absolute top-6 left-0 w-full h-px bg-border" />
+              {steps.map((step, index) => (
+                <div key={step.step} className="relative flex flex-col items-center text-center">
+                  <div className="relative z-10 w-12 h-12 mb-6 rounded-full bg-white border-2 border-primary text-primary flex items-center justify-center font-bold text-xl ring-8 ring-background">{step.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile View */}
+            <div className="md:hidden space-y-12">
+              {steps.map((step) => (
+                <div key={step.step} className="flex flex-col items-center text-center">
+                  <div className="w-16 h-16 mb-4 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-2xl ring-8 ring-background">{step.step}</div>
+                  <h3 className="text-2xl font-semibold mb-2">{step.title}</h3>
+                  <p className="text-muted-foreground max-w-md">{step.description}</p>
+                </div>
+              ))}
+            </div>
           </div>
+
           <div className="text-center mt-16">
-            <Button asChild size="lg" className="text-lg py-6 px-8">
-              <Link href="/kontakt">Jetzt ersten Termin vereinbaren</Link>
+            <Button asChild size="lg" variant="link" className="text-lg text-primary hover:no-underline">
+              <Link href="/kontakt">
+                Jetzt ersten Termin vereinbaren
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
           </div>
         </div>
