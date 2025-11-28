@@ -5,7 +5,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Info } from "lucide-react";
 import { placeholderImages } from "@/lib/placeholder-images";
 
 const checklistItems = [
@@ -78,12 +78,15 @@ export default function PatienteninfosPage() {
                             ))}
                         </ul>
                     </div>
-                    <div className="bg-white p-8 rounded-2xl shadow-lg">
-                        <h3 className="text-2xl font-bold mb-4">Kassen- & Privatleistungen</h3>
+                    <div className="bg-foreground text-background p-8 rounded-2xl shadow-lg">
+                        <div className="flex items-center gap-4 mb-4">
+                            <Info className="w-6 h-6 text-primary flex-shrink-0" />
+                            <h3 className="text-2xl font-bold">Kassen- &amp; Privatleistungen</h3>
+                        </div>
                         <div className="space-y-4 text-muted-foreground">
-                        <p>Wir behandeln gesetzlich Versicherte, Privatpatient:innen und Selbstzahler.</p>
-                        <p>Je nach Krankenkasse und Verordnung können bei gesetzlich Versicherten gesetzliche Zuzahlungen anfallen. Wir informieren Sie hierüber transparent vor Behandlungsbeginn.</p>
-                        <p>Osteopathische Behandlungen sind in der Regel Privatleistungen. Viele gesetzliche Krankenkassen erstatten jedoch einen Teil der Kosten. Bitte erkundigen Sie sich vorab bei Ihrer Kasse.</p>
+                        <p className='text-background/80'>Wir behandeln gesetzlich Versicherte, Privatpatient:innen und Selbstzahler.</p>
+                        <p className='text-background/80'>Je nach Krankenkasse und Verordnung können bei gesetzlich Versicherten gesetzliche Zuzahlungen anfallen. Wir informieren Sie hierüber transparent vor Behandlungsbeginn.</p>
+                        <p className='text-background/80'>Osteopathische Behandlungen sind in der Regel Privatleistungen. Viele gesetzliche Krankenkassen erstatten jedoch einen Teil der Kosten. Bitte erkundigen Sie sich vorab bei Ihrer Kasse.</p>
                         </div>
                     </div>
                 </div>
