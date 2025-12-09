@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -85,37 +86,36 @@ export default function UeberUnsPage() {
                     <div className="text-center max-w-3xl mx-auto mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Unser Team</h2>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
                         {teamMembers.map((member) => {
                             const memberImage = placeholderImages.find(p => p.id === member.id);
                             return (
-                                <Card key={member.name} className="bg-white rounded-2xl shadow-lg border-none overflow-hidden text-center">
+                                <div key={member.name} className="bg-white rounded-2xl shadow-lg border-none overflow-hidden flex flex-col h-full">
                                     {memberImage && (
-                                        <div className="relative h-64 w-full">
+                                        <div className="w-full">
                                             <Image
                                                 src={memberImage.imageUrl}
                                                 alt={memberImage.description}
-                                                fill
-                                                className="object-cover object-center"
+                                                width={400}
+                                                height={400}
+                                                className="object-cover w-full h-auto"
                                                 data-ai-hint={memberImage.imageHint}
                                             />
                                         </div>
                                     )}
-                                    <CardHeader className="p-6">
-                                        <CardTitle className="text-xl font-semibold">{member.name}</CardTitle>
-                                        <p className="text-primary font-medium">{member.title}</p>
-                                    </CardHeader>
-                                    <CardContent className="p-6 pt-0">
-                                        <ul className="space-y-2 text-left text-muted-foreground list-disc pl-4 mb-4">
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <h3 className="text-xl font-semibold">{member.name}</h3>
+                                        <p className="text-primary font-medium mb-4">{member.title}</p>
+                                        <ul className="space-y-2 text-muted-foreground list-disc pl-4 mb-4 text-sm">
                                             {member.bio.map(item => <li key={item}>{item}</li>)}
                                         </ul>
                                         {member.philosophy && (
-                                            <blockquote className="border-l-4 border-primary pl-4 text-left italic text-muted-foreground">
+                                            <blockquote className="mt-auto border-l-4 border-primary pl-4 text-sm italic text-muted-foreground">
                                                 {member.philosophy}
                                             </blockquote>
                                         )}
-                                    </CardContent>
-                                </Card>
+                                    </div>
+                                </div>
                             );
                         })}
                     </div>
