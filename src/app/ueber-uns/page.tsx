@@ -96,7 +96,7 @@ export default function UeberUnsPage() {
                                                 src={memberImage.imageUrl}
                                                 alt={memberImage.description}
                                                 fill
-                                                className="object-cover"
+                                                className="object-cover object-center"
                                                 data-ai-hint={memberImage.imageHint}
                                             />
                                         </div>
