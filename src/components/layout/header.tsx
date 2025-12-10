@@ -20,42 +20,63 @@ const navLinks = [
 const Logo = () => (
     <div className="flex items-center gap-2">
       <HeartPulse className="h-6 w-6 text-primary" />
-      <span className="font-bold">PhysioRhein</span>
+      <span className="font-bold text-lg">PhysioRhein</span>
     </div>
   );
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isScrolled, setIsScrolled] = React.useState(false);
   const pathname = usePathname();
 
-  const NavLink = ({ href, label }: { href: string; label: string }) => (
-    <Link
-      href={href}
-      className={cn(
-        "text-sm font-medium transition-colors hover:text-primary",
-        pathname === href ? "text-primary" : "text-muted-foreground"
-      )}
-      onClick={() => setIsMenuOpen(false)}
-    >
-      {label}
-    </Link>
-  );
+  React.useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
+  const NavLink = ({ href, label }: { href: string; label: string }) => {
+    const isActive = pathname === href;
+    return (
+      <Link
+        href={href}
+        className={cn(
+          "relative text-sm font-medium text-muted-foreground transition-colors hover:text-primary",
+          isActive && "text-primary"
+        )}
+        onClick={() => setIsMenuOpen(false)}
+      >
+        {label}
+        {isActive && (
+          <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary transform scale-x-100 transition-transform duration-300" />
+        )}
+      </Link>
+    );
+  };
+  
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
+    <header className={cn(
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        isScrolled ? "border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm" : "bg-transparent"
+    )}>
+      <div className={cn(
+          "container flex items-center transition-all duration-300",
+          isScrolled ? "h-16" : "h-20"
+      )}>
         <Link href="/" className="mr-6 flex items-center">
           <Logo />
         </Link>
 
-        <nav className="hidden md:flex md:items-center md:gap-6 text-sm">
+        <nav className="hidden md:flex md:items-center md:gap-8 text-sm">
           {navLinks.map((link) => (
             <NavLink key={link.href} {...link} />
           ))}
         </nav>
 
         <div className="flex flex-1 items-center justify-end gap-4">
-          <Button asChild className="hidden md:flex">
+          <Button asChild className="hidden md:flex" variant={isScrolled ? 'default' : 'secondary'}>
             <Link href="/kontakt">Termin vereinbaren</Link>
           </Button>
 
@@ -66,7 +87,7 @@ export function Header() {
                 <span className="sr-only">Menü öffnen</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-background">
               <div className="flex flex-col h-full">
                 <div className="flex justify-between items-center mb-8">
                    <Link href="/" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
