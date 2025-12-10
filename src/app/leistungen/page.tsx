@@ -93,31 +93,32 @@ export default function LeistungenPage() {
     return (
         <div className="bg-background">
             {/* 1. HERO-SEKTION */}
-            <section className="relative bg-white pt-20 pb-16 md:pt-32 md:pb-24">
-                {heroImage && (
-                    <div className="absolute inset-0">
-                        <Image
-                            src={heroImage.imageUrl}
-                            alt={heroImage.description}
-                            fill
-                            className="object-cover object-center"
-                            data-ai-hint={heroImage.imageHint}
-                            priority
-                        />
-                         <div className="absolute inset-0 bg-background/80" />
-                    </div>
-                )}
-                <div className="container mx-auto px-4 relative text-center">
-                    <div className="max-w-3xl mx-auto">
-                        <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight">
-                           Unsere Leistungen – modern, individuell, wissenschaftsbasiert.
-                        </h1>
-                        <p className="mt-6 text-lg md:text-xl text-muted-foreground">
-                            Wir lösen Beschwerden, verbessern Ihre Beweglichkeit und geben Ihnen Lebensqualität zurück.
-                        </p>
-                        <Button asChild size="lg" className="mt-8">
-                            <a href="#uebersicht">Behandlung wählen</a>
-                        </Button>
+            <section className="bg-white">
+                <div className="container mx-auto px-4 py-16 md:py-24">
+                    <div className="grid lg:grid-cols-2 gap-12 items-center">
+                        <div className="text-center lg:text-left">
+                            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
+                               Unsere Leistungen – modern, individuell, wissenschaftsbasiert.
+                            </h1>
+                            <p className="mt-6 text-lg text-muted-foreground max-w-lg mx-auto lg:mx-0">
+                                Wir lösen Beschwerden, verbessern Ihre Beweglichkeit und geben Ihnen Lebensqualität zurück.
+                            </p>
+                            <Button asChild size="lg" className="mt-8">
+                                <a href="#uebersicht">Behandlung wählen</a>
+                            </Button>
+                        </div>
+                        {heroImage && (
+                             <div className="relative h-64 md:h-80 lg:h-96 w-full rounded-2xl overflow-hidden shadow-xl">
+                                <Image
+                                    src={heroImage.imageUrl}
+                                    alt={heroImage.description}
+                                    fill
+                                    className="object-cover object-center"
+                                    data-ai-hint={heroImage.imageHint}
+                                    priority
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
             </section>
