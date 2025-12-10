@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { placeholderImages } from "@/lib/placeholder-images";
-import { ArrowRight, Bone, BrainCircuit, CheckCircle2, CircleDollarSign, Dumbbell, HeartPulse, PersonStanding, ShieldCheck, Star, Stethoscope, UserCheck, Users, WholeBody } from "lucide-react";
+import { ArrowRight, Bone, BrainCircuit, CheckCircle2, CircleDollarSign, Dumbbell, HeartPulse, PersonStanding, ShieldCheck, Star, Stethoscope, UserCheck, Users } from "lucide-react";
 
 const services = [
     {
@@ -26,7 +26,7 @@ const services = [
         href: "/leistungen/manuelle-therapie"
     },
     {
-        icon: WholeBody,
+        icon: PersonStanding,
         title: "Osteopathie",
         benefit: "Die Ursache finden, nicht nur das Symptom behandeln.",
         href: "/leistungen/osteopathie"

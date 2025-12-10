@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, CheckCircle, BrainCircuit, Activity, User, Briefcase, UserCheck, Shield, Star, Award, WholeBody, Search } from "lucide-react";
+import { ArrowRight, CheckCircle, BrainCircuit, Activity, User, Briefcase, UserCheck, Shield, Star, Award, PersonStanding, Search } from "lucide-react";
 import Link from 'next/link';
 
 const testimonials = [
@@ -55,7 +55,7 @@ const outcomes = [
     { icon: Activity, text: "Verbesserte Organfunktion" },
     { icon: Shield, text: "Stärkung der Selbstheilungskräfte" },
     { icon: BrainCircuit, text: "Regulierung des Nervensystems" },
-    { icon: WholeBody, text: "Besseres Körpergefühl & Wohlbefinden" },
+    { icon: PersonStanding, text: "Besseres Körpergefühl & Wohlbefinden" },
     { icon: Award, text: "Auflösung von tiefen Verspannungen" }
 ];
 
@@ -114,7 +114,7 @@ export default function OsteopathiePage() {
                             <p className="text-muted-foreground">Wir sprechen ausführlich über Ihre gesamte Krankheitsgeschichte und Ihre aktuellen Beschwerden, um erste Zusammenhänge zu erkennen.</p>
                         </Card>
                         <Card className="p-8 border-none shadow-lg">
-                            <WholeBody className="w-12 h-12 mx-auto text-primary mb-4" />
+                            <PersonStanding className="w-12 h-12 mx-auto text-primary mb-4" />
                             <h3 className="text-xl font-bold mb-2">2. Manuelle Untersuchung</h3>
                             <p className="text-muted-foreground">Mit unseren Händen untersuchen wir die Spannung und Beweglichkeit von Geweben im ganzen Körper – von den Faszien über Muskeln und Gelenke bis zu den Organen.</p>
                         </Card>
