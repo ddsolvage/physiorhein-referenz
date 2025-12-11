@@ -69,7 +69,7 @@ export default function UeberUnsPage() {
                     <div className="absolute inset-0 bg-background/80" />
                 </div>
                 )}
-                <div className="container mx-auto px-4 relative">
+                <div className="container mx-auto px-4 relative flex justify-center text-center">
                 <div className="max-w-3xl">
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
                         Wir behandeln Menschen, nicht nur Diagnosen.
