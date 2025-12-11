@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -75,7 +76,7 @@ const applicationSteps = [
 ];
 
 export default function JobsPage() {
-    const heroImage = placeholderImages.find((p) => p.id === "about-us-hero");
+    const heroImage = placeholderImages.find((p) => p.id === "jobs-hero");
 
     return (
         <div>
@@ -93,7 +94,7 @@ export default function JobsPage() {
                         <div className="absolute inset-0 bg-background/80" />
                     </div>
                 )}
-                <div className="container mx-auto px-4 relative">
+                <div className="container mx-auto px-4 relative flex justify-center text-center">
                     <div className="max-w-3xl">
                         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
                             Gestalten Sie mit uns die Zukunft der Physiotherapie.
@@ -239,3 +240,5 @@ export default function JobsPage() {
         </div>
     );
 }
+
+    

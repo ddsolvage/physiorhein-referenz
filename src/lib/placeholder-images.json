@@ -26,8 +26,8 @@
     },
     {
       "id": "about-us-hero",
-      "description": "Team von Physiotherapeuten in einer Besprechung",
-      "imageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "description": "Moderner, heller und einladender Behandlungsraum einer Physiotherapiepraxis",
+      "imageUrl": "https://images.unsplash.com/photo-1631217872239-a82d6cda8548?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "imageHint": "physiotherapy clinic room"
     },
     {
@@ -47,6 +47,12 @@
       "description": "Empfangsbereich der Praxis",
       "imageUrl": "https://images.unsplash.com/photo-1697125045982-0d703bc35e96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8cmVjZXB0aW9uJTIwZGVza3xlbnwwfHx8fDE3NjQyNDgxNzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "reception desk"
+    },
+    {
+      "id": "jobs-hero",
+      "description": "Physiotherapeutin zeigt einem Kollegen etwas auf einem Tablet in einem hellen Behandlungsraum.",
+      "imageUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "imageHint": "therapists collaborating"
     }
   ]
 }
