@@ -52,23 +52,19 @@ const philosophyPoints = [
 ];
 
 export default function UeberUnsPage() {
-    const heroImage = placeholderImages.find((p) => p.id === "about-us-hero");
 
     return (
         <div>
              <section className="relative pt-20 pb-12 md:pt-32 md:pb-24 bg-white">
-                {heroImage && (
                 <div className="absolute inset-0">
                     <Image
-                    src={heroImage.imageUrl}
-                    alt={heroImage.description}
+                    src="/Physio-room.webp"
+                    alt="Moderner Behandlungsraum einer Physiotherapiepraxis"
                     fill
                     className="object-cover"
-                    data-ai-hint={heroImage.imageHint}
                     />
                     <div className="absolute inset-0 bg-background/80" />
                 </div>
-                )}
                 <div className="container mx-auto px-4 relative flex justify-center text-center">
                 <div className="max-w-3xl">
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
