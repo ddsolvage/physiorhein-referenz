@@ -147,7 +147,7 @@ export default function LeistungenPage() {
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                        <div className="flex flex-col items-center">
+                        <div className="flex flex-col items-center pt-2">
                             <div className="flex items-center gap-1 text-yellow-500 mb-2">
                                 <Star className="w-6 h-6 fill-current"/>
                                 <Star className="w-6 h-6 fill-current"/>
