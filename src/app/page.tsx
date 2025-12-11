@@ -147,7 +147,7 @@ export default function Home() {
                   <Link href="/kontakt">Termin vereinbaren</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-white hover:bg-gray-100 text-foreground border-gray-300 text-lg py-6 px-8 rounded-lg">
-                  <Link href="/kontakt#form">Rückruf anfordern</Link>
+                  <Link href="/leistungen">Leistungen ansehen</Link>
                 </Button>
               </div>
 
